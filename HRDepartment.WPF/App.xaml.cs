@@ -10,7 +10,10 @@ namespace HRDepartment.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+#if !DEBUG
             DispatcherUnhandledException += App_DispatcherUnhandledExceptionHandler;
+#endif
+
             base.OnStartup(e);
         }
 

@@ -19,46 +19,84 @@
         WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.08*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
+            <Button 
+                x:Name="BackButton"
+                Padding="0"
+                Width="30"
+                Height="30"
+                Grid.Column="0"
+                Click="BackButton_Click">
+                <Button.Content>
+                    <materialDesign:PackIcon 
+                        Kind="ArrowLeftBoldCircleOutline"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Width="25"
+                        Height="25"/>
+                </Button.Content>
+            </Button>
+
+            <Button 
+                Padding="0"
+                Width="30"
+                Height="30"
+                x:Name="ForwardButton"
+                Grid.Column="1"
+                Click="ForwardButton_Click">
+                <Button.Content>
+                    <materialDesign:PackIcon
+                        Kind="ArrowRightBoldCircleOutline"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Width="25"
+                        Height="25"/>
+                </Button.Content>
+            </Button>
+
             <Button
                 x:Name="NavigateToEmployeesPageButton"
                 Content="Employees"
-                Grid.Column="0"
+                Grid.Column="2"
                 Margin="100,5,100,5"
                 Click="NavigateToEmployeesPageButton_Click"/>
 
             <Button
                 x:Name="NavigateToDepartmentsPageButton"
                 Content="Departments"
-                Grid.Column="1"
-                Margin="100,5,100,5"/>
+                Grid.Column="3"
+                Margin="100,5,100,5"
+                Click="NavigateToDepartmentsPageButton_Click"/>
 
             <Button
                 x:Name="NavigateToPositionsPageButton"
                 Content="Poisitions"
-                Grid.Column="2"
+                Grid.Column="4"
                 Margin="100,5,100,5"/>
 
             <Button
                 x:Name="NavigateToOrdersPageButton"
                 Content="Orders"
-                Grid.Column="3"
+                Grid.Column="5"
                 Margin="100,5,100,5"/>
         </Grid>
 
         <Frame
             x:Name="ContentFrame"
-            Grid.Row="1"/>
+            Grid.Row="1"
+            NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

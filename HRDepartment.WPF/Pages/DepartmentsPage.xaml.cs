@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,11 +12,11 @@ namespace HRDepartment.WPF.Pages
     /// <summary>
     /// Interaction logic for EmployeesPage.xaml
     /// </summary>
-    public partial class EmployeesPage : Page
+    public partial class DepartmentsPage : Page
     {
-        public DataView EmployeesDataView = null;
+        public DataView DepartmentsDataView = null;
 
-        public EmployeesPage()
+        public DepartmentsPage()
         {
             InitializeComponent();
         }
@@ -61,17 +62,12 @@ namespace HRDepartment.WPF.Pages
 
             if (string.IsNullOrEmpty(selectedSearchValue))
             {
-                EmployeesDataView.RowFilter = string.Empty;
+                DepartmentsDataView.RowFilter = string.Empty;
             }
             else
             {
-                EmployeesDataView.RowFilter = string.Format($"`{selectedSearchColumn}` LIKE '{selectedSearchValue}*'");
+                DepartmentsDataView.RowFilter = string.Format($"`{selectedSearchColumn}` LIKE '{selectedSearchValue}*'");
             }
-        }
-
-        private void AddDataGridButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frames.MainFrame.Content = new AddEmployeePage();
         }
 
         #endregion
@@ -81,9 +77,9 @@ namespace HRDepartment.WPF.Pages
             var query = QueryManager.Employee.SelectAll();
             var dataView = DbContext.Instance.ExecuteCommandToDataView(query);
 
-            EmployeesDataView = dataView;
+            DepartmentsDataView = dataView;
 
-            this.EmployeesDataGrid.ItemsSource = EmployeesDataView;
+            this.EmployeesDataGrid.ItemsSource = DepartmentsDataView;
 
             var headers = dataView.ToTable()
                 .Columns

@@ -42,11 +42,11 @@ namespace HRDepartment.Database
             }
         }
 
-        public void ExecuteCommandNonQuery(string query)
+        public int ExecuteCommandNonQuery(string query)
         {
             using (var command = new MySqlCommand(query, _connection))
             {
-                command.ExecuteNonQuery();
+                return command.ExecuteNonQuery();
             }
         }
 

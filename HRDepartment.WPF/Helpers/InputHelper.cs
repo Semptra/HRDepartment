@@ -16,5 +16,10 @@ namespace HRDepartment.WPF.Helpers
 
             return result == MessageBoxResult.Yes;
         }
+
+        public static void DisplayInformation(string caption, string message)
+        {
+            MessageBox.Show(message, caption, MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

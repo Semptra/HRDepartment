@@ -10,10 +10,15 @@ namespace HRDepartment.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private EmployeesPage _employeesPage = new EmployeesPage();
+        private DepartmentsPage _departmentsPage = new DepartmentsPage(); 
+
         public MainWindow()
         {
             InitializeComponent();
             OpenDbConnection();
+
+            Frames.MainFrame = this.ContentFrame;
         }
 
         private void OpenDbConnection()
@@ -29,9 +34,40 @@ namespace HRDepartment.WPF
             context.Open(connectionString);
         }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ContentFrame.CanGoBack)
+            {
+                this.ContentFrame.NavigationService.GoBack();
+            }
+        }
+
+        private void ForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ContentFrame.CanGoForward)
+            {
+                this.ContentFrame.NavigationService.GoForward();
+            }
+        }
+
         private void NavigateToEmployeesPageButton_Click(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Navigate(EmployeesPage.Uri);
+            this.ContentFrame.Content = _employeesPage;
+
+            if (_employeesPage.EmployeesDataView is null)
+            {
+                _employeesPage.RefreshDataGrid();
+            }
+        }
+
+        private void NavigateToDepartmentsPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = _departmentsPage;
+
+            if(_departmentsPage.DepartmentsDataView is null)
+            {
+                _departmentsPage.RefreshDataGrid();
+            }
         }
     }
 }

@@ -1,0 +1,309 @@
+﻿<Page x:Class="HRDepartment.WPF.Pages.AddEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HRDepartment.WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+      Title="AddEmployeePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Card 
+            Grid.Row="0"
+            Padding="2" 
+            Margin="100, 5, 100, 5">
+            <TextBlock 
+                Style="{DynamicResource MaterialDesignTitleTextBlock}"
+                HorizontalAlignment="Center">
+                Add Employee
+            </TextBlock>
+        </materialDesign:Card>
+
+        <Grid 
+            Grid.Row="1"
+            Margin="100, 5, 100, 5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <materialDesign:Card 
+                Grid.Column="0"
+                Grid.Row="0"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="First name"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="FirstNameTextBox"
+                Grid.Column="1"
+                Grid.Row="0"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="0"
+                Grid.Row="1"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Last name"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="LastNameTextBox"
+                Grid.Column="1"
+                Grid.Row="1"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="0"
+                Grid.Row="2"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Surname"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="SurnameNameTextBox"
+                Grid.Column="1"
+                Grid.Row="2"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="0"
+                Grid.Row="3"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Gender"/>
+            </materialDesign:Card>
+
+            <ComboBox
+                x:Name="GenderComboBox"
+                Grid.Column="1"
+                Grid.Row="3"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"
+                SelectedIndex="0"
+                IsEditable="False">
+                <ComboBox.Items>
+                    <ComboBoxItem>Male</ComboBoxItem>
+                    <ComboBoxItem>Female</ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+
+            <materialDesign:Card 
+                Grid.Column="0"
+                Grid.Row="4"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Birthday"/>
+            </materialDesign:Card>
+
+            <DatePicker
+                x:Name="BirthdayDatePicker"
+                Grid.Column="1"
+                Grid.Row="4"
+                Padding="2"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="0"
+                Grid.Row="5"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Place of birth"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="PlaceOfBirthTextBox"
+                Grid.Column="1"
+                Grid.Row="5"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="2"
+                Grid.Row="0"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Place of residence"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="PlaceOfResidenceTextBox"
+                Grid.Column="3"
+                Grid.Row="0"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="2"
+                Grid.Row="1"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                HorizontalAlignment="Center"
+                    Text="Passport data"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="PassportDataTextBox"
+                Grid.Column="3"
+                Grid.Row="1"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"/>
+
+            <materialDesign:Card 
+                Grid.Column="2"
+                Grid.Row="2"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                    Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                    HorizontalAlignment="Center"
+                    Text="Code"/>
+            </materialDesign:Card>
+
+            <TextBox
+                x:Name="CodeTextBox"
+                Grid.Column="3"
+                Grid.Row="2"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"
+                PreviewTextInput="CodeTextBox_PreviewTextInput"/>
+
+            <materialDesign:Card 
+                Grid.Column="2"
+                Grid.Row="3"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                    Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                    HorizontalAlignment="Center"
+                    Text="Fit for army serve"/>
+            </materialDesign:Card>
+
+            <ComboBox
+                x:Name="FitForArmyServeComboBox"
+                Grid.Column="3"
+                Grid.Row="3"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"
+                SelectedIndex="0"
+                IsEditable="False">
+                <ComboBox.Items>
+                    <ComboBoxItem>Yes</ComboBoxItem>
+                    <ComboBoxItem>No</ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+
+            <materialDesign:Card 
+                Grid.Column="2"
+                Grid.Row="4"
+                Padding="2"
+                Margin="5,0,5,0"
+                VerticalAlignment="Center">
+                <TextBlock 
+                    Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                    HorizontalAlignment="Center"
+                    Text="Army served"/>
+            </materialDesign:Card>
+
+            <ComboBox
+                x:Name="ArmyServedComboBox"
+                Grid.Column="3"
+                Grid.Row="4"
+                Margin="20,0,20,0"
+                VerticalAlignment="Center"
+                SelectedIndex="0"
+                IsEditable="False">
+                <ComboBox.Items>
+                    <ComboBoxItem>Yes</ComboBoxItem>
+                    <ComboBoxItem>No</ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="SaveButton"
+                Grid.Column="0"
+                Margin="100, 5, 100, 5"
+                Content="Save"
+                Click="SaveButton_Click"/>
+
+            <Button
+                x:Name="BackButton"
+                Grid.Column="1"
+                Margin="100, 5, 100, 5"
+                Content="Back"
+                Click="BackButton_Click"/>
+        </Grid>
+    </Grid>
+</Page>
